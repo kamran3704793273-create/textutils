@@ -1,11 +1,11 @@
 import './App.css';
 import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import TextForm from './Components/TextForm';
 import  Alert  from './Components/Alert';
-import About from './Components/About';
-import Www from './Components/Www';
+// import About from './Components/About';
+// import Www from './Components/Www';
 
 function App() {
     const [alert, setAlert] = useState(null);
@@ -51,25 +51,26 @@ function App() {
   return (
     
     <div>
-      <Router>
+      {/* <Router> */}
         <Navbar
         title="TextUtils"
         title2="About"
         mode={mode}
         btnmode={btnmode}
         darkMode={darkMode}
-        
+  
       />
       
       <Alert alert={alert} />
-      
-      <div className="container">
-      <Routes>
+       <div className="container">
+      <TextForm showalert={showalert} heading="New Text To Analayse" mode={mode} />
+            </div>
+      {/* <Routes>
           <Route exact path="/" element={<TextForm showalert={showalert} heading="New Text To Analayse" mode={mode} />}/>
           <Route exact path="/about" element={<About/>} />
-        </Routes>  
-        </div> 
-      </Router>
+        </Routes>   */}
+  
+      {/* </Router> */}
     </div>
   );
 
